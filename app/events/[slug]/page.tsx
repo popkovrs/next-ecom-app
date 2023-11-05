@@ -4,6 +4,8 @@ import ImageGallery from "@/app/components/ImageGallery";
 import { fullEvent } from "@/app/lib/interface";
 import { client } from "@/app/lib/sanity";
 
+
+
 async function getData(slug: string) {
 
     const query = `*[_type == "event" && slug.current == "${slug}"][0] 
@@ -15,7 +17,6 @@ async function getData(slug: string) {
 }
 
 export const dynamic = "force-dynamic";
-
 
 export default async function EventPage({
     params

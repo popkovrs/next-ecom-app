@@ -4,6 +4,7 @@ import { client } from "../lib/sanity";
 import Image from "next/image";
 import { simplifiedEvent } from './../lib/interface';
 
+
 async function getData(genre: string) {
     const query = `*[_type == "event" && genre->name == "${genre}"]{
         _id, "imageUrl": images[0].asset->url,
@@ -19,6 +20,8 @@ async function getData(genre: string) {
 
       return data;
 }
+
+export const dynamic = "force-dynamic";
 
 export default async function genrePage({
     params
